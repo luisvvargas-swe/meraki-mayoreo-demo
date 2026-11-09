@@ -22,4 +22,6 @@ Por ejemplo, 20 botellas equivalen a 14 litros y pertenecen al nivel Restaurante
 
 ## Ejecución local
 
-Descarga el repositorio y abre `index.html`. La página, la ilustración en CSS y la lógica de validación funcionan sin instalar herramientas ni configurar cuentas. Las reglas y la generación del archivo de texto se encuentran en `app.js`.
+Descarga el repositorio y abre `index.html`. La página, la imagen de producto y la lógica de validación funcionan sin instalar herramientas ni configurar cuentas. Las reglas y la generación del archivo de texto se encuentran en `app.js`.
+
+La imagen de la botella es una representación ilustrativa generada con IA para esta demo.

@@ -4,75 +4,52 @@
   <meta charset="utf-8">
   <meta name="author" content="Luis Armando Vargas Peña">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#102f30">
-  <meta name="description" content="Prueba el flujo de mayoreo de Meraki B2B. Elige el volumen y prepara una solicitud de muestra desde tu navegador.">
-  <title>Mayoreo Meraki · Luis Vargas</title>
+  <meta name="theme-color" content="#592a35">
+  <meta name="description" content="Explora la vinagreta de tequila Meraki. Configura una solicitud de mayoreo con los volúmenes del catálogo y descarga el borrador.">
+  <title>Meraki · Vinagreta de tequila al mayoreo</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
 <body>
-  <header class="bar">
-    <div class="bar-inner">
-      <a href="https://luisvvargas-swe.github.io/#proyectos" class="back">← <span>Portafolio de Luis Vargas</span></a>
-      <a href="https://github.com/Luisvvargas/meraki-b2b" rel="noreferrer">Proyecto original ↗</a>
-    </div>
-  </header>
-  <main>
-    <div class="intro">
-      <p class="eyebrow">Adaptación de Meraki B2B</p>
-      <h1>Compra mayorista</h1>
-      <p>Elige un volumen para tu negocio y prepara una solicitud de cotización de ejemplo.</p>
-    </div>
-    <div class="layout">
-      <aside class="product" aria-label="Producto">
-        <div class="product-banner">
-          <span class="sku">MRK-700</span>
-          <div class="bottle" aria-hidden="true"><i class="cap"></i><i class="neck"></i><i class="body"></i><i class="label">Meraki</i></div>
-        </div>
-        <div class="product-text">
-          <p class="eyebrow">Producto</p>
-          <h2>Vinagreta de tequila</h2>
-          <p>Meraki · Botella de 700 ml</p>
-          <dl>
-            <div><dt>Presentación</dt><dd>6 botellas por caja</dd></div>
-            <div><dt>Precio</dt><dd>Bajo petición</dd></div>
-          </dl>
-        </div>
-      </aside>
-      <section class="config" aria-labelledby="config-title">
-        <h2 id="config-title">Configura tu solicitud</h2>
-        <form id="order-form">
-          <fieldset>
-            <legend>Nivel de volumen</legend>
-            <div class="tiers">
-              <label class="tier"><input type="radio" name="tier" value="starter" checked><span>Inicial<small>6–11 botellas</small></span></label>
-              <label class="tier"><input type="radio" name="tier" value="restaurant"><span>Restaurante<small>12–23 botellas</small></span></label>
-              <label class="tier"><input type="radio" name="tier" value="hospitality"><span>Hotelería<small>24 o más</small></span></label>
-            </div>
-          </fieldset>
-          <div class="inputs">
-            <div><label for="quantity">Botellas</label>
-              <input id="quantity" type="number" min="6" max="11" step="1" value="6" inputmode="numeric" required aria-describedby="quantity-hint">
-              <small id="quantity-hint">De 6 a 11 en este nivel.</small>
-            </div>
-            <div><label for="account">Establecimiento de ejemplo</label>
-              <select id="account"><option>Bistró Ágora</option><option>Hotel Selene</option><option>Cocina Oliva</option></select>
-            </div>
+  <a class="skip" href="#pedido">Ir al configurador</a>
+  <header class="masthead"><div class="frame masthead-inner">
+    <a class="brand" href="#producto" aria-label="Meraki, producto"><img src="favicon.svg" width="42" height="42" alt=""><span>Meraki</span></a>
+    <nav aria-label="Navegación de Meraki"><a href="#pedido">Mayoreo</a><a href="https://luisvvargas-swe.github.io/#proyectos">Portafolio de Luis <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="producto" class="frame product-sheet">
+    <figure class="product-image">
+      <img class="photograph" src="meraki-vinagreta.webp" width="800" height="1000" alt="Presentación ilustrativa de la vinagreta Meraki en botella de vidrio verde con etiqueta de papel y tapón oscuro.">
+      <figcaption><span>Meraki · Catálogo profesional</span><span>MRK-700</span></figcaption>
+    </figure>
+    <section class="purchase" aria-labelledby="product-title">
+      <p class="eyebrow">Compra mayorista</p>
+      <h1 id="product-title">Vinagreta <em>de tequila</em></h1>
+      <ul class="specs" aria-label="Ficha de producto"><li>700 ml por botella</li><li>6 botellas por caja</li></ul>
+      <form id="order-form">
+        <fieldset id="pedido"><legend>Selecciona tu volumen</legend>
+          <div class="tiers">
+            <label class="tier"><input type="radio" name="tier" value="starter" checked><span>Inicial<small>6–11 botellas</small></span></label>
+            <label class="tier"><input type="radio" name="tier" value="restaurant"><span>Restaurante<small>12–23 botellas</small></span></label>
+            <label class="tier"><input type="radio" name="tier" value="hospitality"><span>Hotelería<small>24–999 botellas</small></span></label>
           </div>
-          <div class="summary" aria-live="polite"><span>Volumen total</span><strong id="liters">4.2 L</strong></div>
-          <button class="primary" type="submit">Generar borrador <span aria-hidden="true">→</span></button>
-          <p class="note">Simulación local con establecimientos ficticios. El borrador se genera en tu navegador.</p>
-        </form>
-        <section hidden id="receipt" class="receipt" aria-labelledby="receipt-title">
-          <h3 id="receipt-title" tabindex="-1">Borrador de cotización</h3>
-          <p id="receipt-summary"></p>
-          <p>Precio mayorista pendiente de confirmación.</p>
-          <button id="download" type="button" class="secondary">Descargar borrador (.txt)</button>
-        </section>
-        <noscript><p>Activa JavaScript para probar la selección de volumen y generar un borrador.</p></noscript>
+        </fieldset>
+        <div class="inputs">
+          <div><label for="quantity">Botellas</label><input id="quantity" type="number" min="6" max="11" step="1" value="6" inputmode="numeric" required aria-describedby="quantity-hint"><small id="quantity-hint">De 6 a 11 en este nivel.</small></div>
+          <div><label for="account">Establecimiento de ejemplo</label><select id="account"><option>Bistró Ágora</option><option>Hotel Selene</option><option>Cocina Oliva</option></select></div>
+        </div>
+        <dl class="summary"><div><dt>Volumen total</dt><dd id="liters" aria-live="polite">4.2 L</dd></div><div><dt>Precio mayorista</dt><dd>Bajo petición</dd></div></dl>
+        <button class="primary" type="submit">Generar borrador <span aria-hidden="true">→</span></button>
+        <p class="note">Demo con establecimientos ficticios. El archivo se genera en tu navegador.</p>
+      </form>
+      <section hidden id="receipt" class="receipt" aria-labelledby="receipt-title">
+        <h2 id="receipt-title" tabindex="-1">Borrador de cotización</h2>
+        <p id="receipt-summary"></p><p>Precio mayorista pendiente de confirmación.</p>
+        <button id="download" type="button" class="secondary">Descargar borrador (.txt) <span aria-hidden="true">↓</span></button>
       </section>
-    </div>
-    <footer>Proyecto de Luis Vargas. Adaptación web con asistencia de IA del selector del proyecto universitario Meraki B2B. <a href="https://github.com/Luisvvargas/meraki-b2b/blob/00dcabb24cb939c96b71b674067f6a15ab9f9c81/src/data/product.ts">Ver el catálogo y sus reglas ↗</a> · <a href="https://github.com/luisvvargas-swe/meraki-mayoreo-demo">Código de esta aplicación ↗</a></footer>
+      <noscript><p>Activa JavaScript para probar los volúmenes y generar el borrador.</p></noscript>
+    </section>
   </main>
+  <footer><div class="frame footer-inner"><div class="credit"><span class="footer-brand">Meraki</span><p>Proyecto universitario de Luis Vargas. Adaptación web con asistencia de IA.</p></div><div class="sources"><a href="https://github.com/Luisvvargas/meraki-b2b">Proyecto original ↗</a><a href="https://github.com/Luisvvargas/meraki-b2b/blob/00dcabb24cb939c96b71b674067f6a15ab9f9c81/src/data/product.ts">Reglas del catálogo ↗</a><a href="https://github.com/luisvvargas-swe/meraki-mayoreo-demo">Código de esta app ↗</a></div></div></footer>
 </body>
 </html>
