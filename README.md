@@ -1,6 +1,6 @@
 # Meraki · Configurador mayorista
 
-Aplicación de Luis Armando Vargas Peña basada en el selector de mayoreo de su proyecto universitario Meraki B2B. Esta implementación independiente, desarrollada con asistencia de IA, permite probar las reglas de volumen y descargar una solicitud de muestra. [Proyecto original](https://github.com/Luisvvargas/meraki-b2b) · [Reglas del catálogo usadas en esta versión](https://github.com/Luisvvargas/meraki-b2b/blob/00dcabb24cb939c96b71b674067f6a15ab9f9c81/src/data/product.ts)
+Aplicación de Luis Armando Vargas Peña basada en el selector de mayoreo de su proyecto universitario Meraki B2B. Esta implementación independiente, desarrollada con asistencia de IA, permite probar las reglas de volumen y descargar una solicitud de muestra. [Proyecto original](https://github.com/luisvvargas-swe/meraki-b2b) · [Reglas del catálogo usadas en esta versión](https://github.com/luisvvargas-swe/meraki-b2b/blob/00dcabb24cb939c96b71b674067f6a15ab9f9c81/src/data/product.ts)
 
 [Probar la aplicación](https://luisvvargas-swe.github.io/meraki-mayoreo-demo/) · [Portafolio](https://luisvvargas-swe.github.io/)
 
